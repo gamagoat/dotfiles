@@ -2,9 +2,21 @@
 A collection of dotfiles I use across various machines.
 
 # symlinks
-I found it easiest to manage symlinks via stow.  For example, to symlink the entire neovim config dir, you can:
+I found it easiest to manage symlinks via stow.
 
 ```sh
-stow --target=/Users/<user>/.config/nvim nvim/
+stow nvim/
 ```
 
+will symlink `nvim/`: 
+
+```
+./nvim
+└── .config
+    └── nvim
+        ├── init.lua
+        └── plugin
+            └── lastplace.lua
+```
+
+in `/.config/nvim/`
