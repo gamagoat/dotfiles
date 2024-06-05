@@ -1,3 +1,5 @@
+export LANG=en_US.UTF-8
+
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
