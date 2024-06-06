@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 
 -- Locals
-local tab_width=2
+local tab_width = 2
 
 -- Show line number
 vim.opt.number = true
