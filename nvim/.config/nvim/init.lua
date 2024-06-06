@@ -1,5 +1,7 @@
-
 require "opts"
+require "launch"
+require "keymaps"
+require("plugin.lastplace")
 
 -- Lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -15,8 +17,5 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup({
-{"ellisonleao/glow.nvim", config = true, cmd = "Glow"}
-})
-
-
+-- Check launch.lua for the plugin spec
+require ("lazy").setup(LAZY_PLUGIN_SPEC)
