@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 alias vim="nvim"
-alias rlrc="source ~/repos/dotfiles/zsh/.zshrc"
-alias zrc="vim ~/.zshrc"
-
 alias ls="lsd"
 
+alias rl="source ~/repos/dotfiles/zsh/.zshrc"
+alias zrc="vim ~/.zshrc"
 
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+  
 alias gcam="git commit -a -m"
-alias gp="git push"
+alias gp="git push" 
 alias gs="git s"
 
 # Always enable colored `grep` output
