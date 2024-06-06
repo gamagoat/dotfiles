@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 alias vim="nvim"
-alias reloadrc="source ~/repos/dotfiles/zsh/.zshrc"
+alias rlrc="source ~/repos/dotfiles/zsh/.zshrc"
 alias zrc="vim ~/.zshrc"
 
 alias ls="lsd"
 
 
 alias gcam="git commit -a -m"
+alias gp="git push"
+alias gs="git s"
 
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
