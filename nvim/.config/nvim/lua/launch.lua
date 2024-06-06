@@ -79,6 +79,9 @@ LAZY_PLUGIN_SPEC = {
 		end,
 	},
 
+	-- Visual Multi
+	{ "mg979/vim-visual-multi", branch = "master", lazy = false },
+
 	-- Conform
 	{
 		"stevearc/conform.nvim",
