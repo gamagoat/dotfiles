@@ -1,6 +1,8 @@
+-- Use <Space> as a leader
+vim.g.mapleader = " "
+
 -- Locals
 local tab_width=2
-
 
 -- Show line number
 vim.opt.number = true
