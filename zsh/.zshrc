@@ -1,13 +1,12 @@
-export LANG=en_US.UTF-8
+# Load the shell dotfiles:
+# * ~/.path can be used to extend `$PATH`.
+for file in ~/.{path,exports,aliases,functions}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-alias vim="nvim"
-alias rez="source ~/repos/dotfiles/zsh/.zshrc"
-alias zrc="vim ~/.zshrc"
-
-alias ls="lsd"
 
 eval "$(mcfly init zsh)"
