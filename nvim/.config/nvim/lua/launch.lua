@@ -8,10 +8,27 @@ LAZY_PLUGIN_SPEC = {
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		lazy = false,
+		tag = "0.1.6",
 		cmd = "Telescope",
 		config = function()
 			local builtin = require("telescope.builtin")
-			vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+
+			-- Find hidden files using ripgrep, but not if they live in .git
+			vim.keymap.set("n", "<leader>ff", function()
+				builtin.find_files({
+					find_command = {
+						"rg",
+						-- List files
+						"--files",
+						-- Include hidden files and directories
+						"--hidden",
+						-- Exclude .git directories and their contents
+						"--glob",
+						"!.git/*",
+					},
+				})
+			end, {})
+
 			vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 			vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
@@ -19,6 +36,27 @@ LAZY_PLUGIN_SPEC = {
 			local actions = require("telescope.actions")
 			require("telescope").setup({
 				defaults = {
+					-- Arguments to pass when grepping
+					vimgrep_arguments = {
+						"rg",
+						-- Show color in output if in an interactive terminal
+						"--color=auto",
+						-- Prevent printing filenames above matching content
+						"--no-heading",
+						-- Include filename in the output
+						"--with-filename",
+						-- Include line number in the output
+						"--line-number",
+						-- Include column number in the output
+						"--column",
+						-- Case-insensitive search if pattern is all lowercase, case-sensitive otherwise
+						"--smart-case",
+						-- Include hidden files and directories in the search
+						"--hidden",
+						-- Exclude .git directories and their contents
+						"--glob",
+						"!.git/*",
+					},
 					mappings = {
 						i = {
 							["<C-n>"] = actions.cycle_history_next,
