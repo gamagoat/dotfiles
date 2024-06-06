@@ -82,6 +82,17 @@ defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
 # Turn on app auto-update
 defaults write com.apple.commerce AutoUpdate -bool true
 
+###############################################################################
+# Mail                                                                        #
+###############################################################################
+
+# Display emails in threaded mode, sorted by date (oldest at the top)
+defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
+defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending" -string "yes"
+defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "received-date"
+
+# Disable inline attachments (just show the icons)
+defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 
 ###############################################################################
 # Photos                                                                      #
@@ -96,6 +107,7 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 for app in "Activity Monitor" \
 	"Finder" \
+  "Mail" \
 	"Photos" ; do
 	killall "${app}" &> /dev/null
 done
