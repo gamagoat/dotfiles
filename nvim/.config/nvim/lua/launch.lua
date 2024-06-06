@@ -112,7 +112,7 @@ LAZY_PLUGIN_SPEC = {
 				-- Which parsers to install
 				ensure_installed = { "c", "bash", "lua", "query", "vim", "vimdoc" },
 				-- Whether to install parsers synchronously
-				sync_install = false,
+				sync_install = true,
 				-- Automatically install missing parsers when entering buffer
 				-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
 				auto_install = true,
@@ -122,7 +122,10 @@ LAZY_PLUGIN_SPEC = {
 			})
 		end,
 	},
-}
+
+	{ "rebelot/kanagawa.nvim", priority = 1000 },
+	-- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+} -- end LAZY_PLUGIN_SPEC
 
 function spec(item)
 	table.insert(LAZY_PLUGIN_SPEC, { import = item })

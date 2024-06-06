@@ -30,3 +30,5 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		require("conform").format()
 	end,
 })
+
+vim.cmd("colorscheme kanagawa")
