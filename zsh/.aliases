@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+alias aliases="cat ~/repos/dotfiles/zsh/.aliases"
+
 alias vim="nvim"
 alias ls="lsd"
 
@@ -9,10 +11,13 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-  
+
+alias ga="git add"
+alias gc="git commit -m"
 alias gcam="git commit -a -m"
 alias gp="git push" 
 alias gs="git s"
+alias gl="git log --short"
 
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
