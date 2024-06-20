@@ -110,7 +110,7 @@ LAZY_PLUGIN_SPEC = {
 
 			configs.setup({
 				-- Which parsers to install
-				ensure_installed = { "c", "bash", "lua", "query", "vim", "vimdoc" },
+				ensure_installed = { "c", "css", "bash", "html", "lua", "query", "vim", "vimdoc" },
 				-- Whether to install parsers synchronously
 				sync_install = true,
 				-- Automatically install missing parsers when entering buffer

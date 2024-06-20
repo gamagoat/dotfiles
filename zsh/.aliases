@@ -14,10 +14,11 @@ alias .....="cd ../../../.."
 
 alias ga="git add"
 alias gc="git commit -m"
+alias gd="git diff --patch-with-stat"
 alias gcam="git commit -a -m"
 alias gp="git push" 
 alias gs="git s"
-alias gl="git log --short"
+alias gl="git log --pretty=oneline -n 20 --abbrev-commit"
 
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
