@@ -124,6 +124,17 @@ LAZY_PLUGIN_SPEC = {
 		end,
 	},
 
+	-- LSP Zero
+	--- Uncomment the two plugins below if you want to manage the language servers from neovim
+	-- { "williamboman/mason.nvim" },
+	-- { "williamboman/mason-lspconfig.nvim" },
+
+	{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
+	{ "neovim/nvim-lspconfig" },
+	{ "hrsh7th/cmp-nvim-lsp" },
+	{ "hrsh7th/nvim-cmp" },
+	{ "L3MON4D3/LuaSnip" },
+
 	{ "rebelot/kanagawa.nvim", priority = 1000 },
 	-- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 } -- end LAZY_PLUGIN_SPEC

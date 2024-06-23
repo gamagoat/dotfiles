@@ -31,4 +31,18 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	end,
 })
 
+-- LSP
+local lsp_zero = require("lsp-zero")
+
+lsp_zero.on_attach(function(client, bufnr)
+	-- see :help lsp-zero-keybindings
+	-- to learn the available actions
+	lsp_zero.default_keymaps({ buffer = bufnr })
+end)
+
+require("lspconfig").gopls.setup({})
+
+lsp_zero.setup_servers({ "gopls" })
+
+-- Color scheme
 vim.cmd("colorscheme kanagawa")
