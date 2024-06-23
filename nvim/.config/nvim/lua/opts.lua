@@ -7,7 +7,7 @@ local tab_width = 2
 -- Show line number
 vim.opt.number = true
 -- Show relative line number
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 -- Use spaces instead of tabs
 vim.opt.tabstop = tab_width
 vim.opt.softtabstop = tab_width
