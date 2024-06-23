@@ -1,0 +1,14 @@
+[docker_context]
+disabled = true
+
+[git_status]
+disabled = true
+
+[git_state]
+disabled = true
+
+[kubernetes]
+disabled = false
+symbol = "⎈ "
+style = "blue bold"
+detect_files = [".kube/config"]
