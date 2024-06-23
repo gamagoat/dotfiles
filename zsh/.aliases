@@ -3,6 +3,7 @@ alias aliases="cat ~/repos/dotfiles/zsh/.aliases"
 
 alias vim="nvim"
 alias ls="lsd"
+alias bat="bat --paging=never"
 
 alias rl="source ~/repos/dotfiles/zsh/.zshrc"
 alias zrc="vim ~/.zshrc"
