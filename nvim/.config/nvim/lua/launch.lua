@@ -3,6 +3,9 @@ LAZY_PLUGIN_SPEC = {
 	-- Glow
 	{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 
+	-- Go
+	{ "fatih/vim-go", run = ":GoUpdateBinaries" },
+
 	-- Telescope
 	{
 		"nvim-telescope/telescope.nvim",

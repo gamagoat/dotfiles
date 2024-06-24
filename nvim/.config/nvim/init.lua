@@ -41,8 +41,9 @@ lsp_zero.on_attach(function(client, bufnr)
 end)
 
 require("lspconfig").gopls.setup({})
+require("lspconfig").pylsp.setup({})
 
-lsp_zero.setup_servers({ "gopls" })
+lsp_zero.setup_servers({ "gopls", "pylsp" })
 
 local cmp = require("cmp")
 local cmp_action = require("lsp-zero").cmp_action()
