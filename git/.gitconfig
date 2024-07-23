@@ -16,3 +16,6 @@
 
 	# Show the user email for the current repository.
 	whoami = config user.email
+[user]
+	email = 35706274+gamagoat@users.noreply.github.com
+	name = gamagoat
