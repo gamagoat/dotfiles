@@ -1,10 +1,13 @@
 # dotfiles
+
 A collection of dotfiles I use across various machines.
 
-# symlinks
+## symlinks
+
 I found it easiest to manage symlinks via stow.
 
 Assuming you are in this repo, `.dotfiles/`, running
+
 ```sh
 stow nvim/
 ```
