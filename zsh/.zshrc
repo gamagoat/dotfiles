@@ -1,6 +1,6 @@
 # Load the shell dotfiles:
 # * ~/.path can be used to extend `$PATH`.
-for file in ~/.{path,exports,aliases,kubectl_aliases}; do
+for file in ~/.{path,exports,aliases,kubectl_aliases,extras}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -10,6 +10,8 @@ eval "$(starship init zsh)"
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 eval "$(mcfly init zsh)"
+
+eval "$(direnv hook zsh)"
 
 # Load zsh-completions if installed
 if [[ -r "/usr/local/share/zsh-completions" ]]; then
