@@ -5,8 +5,18 @@ return {
     "nvim-telescope/telescope.nvim",
 
     keys = {
-      -- Override fg to grep files
-      { "<leader>fg", builtin.live_grep, desc = "Grep files" },
+      -- Override fg to grep files including those from an Obsidian vault
+      {
+        "<leader>fg",
+        function()
+          local vault_path = os.getenv("DEFAULT_OBSIDIAN_VAULT")
+          builtin.live_grep({
+            search_dirs = { vault_path },
+            path_display = { "smart" },
+          })
+        end,
+        desc = "Grep files",
+      },
 
       -- Disable the old grep keymap
       { "<leader>/", false },
