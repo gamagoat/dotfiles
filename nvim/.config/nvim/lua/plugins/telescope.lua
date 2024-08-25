@@ -11,7 +11,7 @@ return {
         function()
           local vault_path = os.getenv("DEFAULT_OBSIDIAN_VAULT")
           builtin.live_grep({
-            search_dirs = { vault_path },
+            search_dirs = { vault_path, vim.fn.getcwd() },
             path_display = { "smart" },
           })
         end,
