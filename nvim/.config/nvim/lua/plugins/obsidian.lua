@@ -13,11 +13,28 @@ return {
     "nvim-lua/plenary.nvim",
   },
   opts = {
-    workspaces = {
-      {
-        name = "personal",
-        path = vim.fn.expand(vim.fn.getenv("DEFAULT_OBSIDIAN_VAULT")),
-      },
-    },
+    dir = vim.fn.expand(vim.fn.getenv("DEFAULT_OBSIDIAN_VAULT")),
+
+    notes_subdir = "00-zettelkasten",
+    new_notes_location = "notes_subdir",
+
+    ---@param title string|?
+    ---@return string
+    note_id_func = function(title)
+      -- Create note IDs in the format YYYY-MM-DD-HH-MM-SS-title
+      local suffix = ""
+      if title ~= nil then
+        -- If title is given, transform it into a valid file name.
+        suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+      else
+        -- If title is nil, just add 4 random uppercase letters to the suffix.
+        for _ = 1, 4 do
+          suffix = suffix .. string.char(math.random(65, 90))
+        end
+      end
+      -- Get the current date and time in the format YYYY-MM-DD-HH-MM-SS
+      local date_time = os.date("%Y-%m-%d-%H-%M-%S")
+      return date_time .. "-" .. suffix
+    end,
   },
 }
