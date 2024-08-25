@@ -8,8 +8,10 @@ return {
         -- Tab to confirm the autocomplete suggestion
         ["<Tab>"] = cmp.mapping.confirm({ select = true }),
 
-        -- Enter to confirm the autocomplete suggestion
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        -- Enter should not confirm the autocomplete suggestion; it should insert a newline
+        ["<CR>"] = cmp.mapping(function(fallback)
+          fallback() -- This ensures the Enter key inserts a newline instead of confirming a suggestion
+        end, { "i", "s" }),
 
         -- Space should not confirm the autocomplete suggestion; it should insert a space
         ["<Space>"] = cmp.mapping(function(fallback)
