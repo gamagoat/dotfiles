@@ -15,6 +15,9 @@ return {
   opts = {
     dir = vim.fn.expand(vim.fn.getenv("DEFAULT_OBSIDIAN_VAULT")),
 
+    notes_subdir = "00-zettelkasten",
+    new_notes_location = "notes_subdir",
+
     ---@param title string|?
     ---@return string
     note_id_func = function(title)
