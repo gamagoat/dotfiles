@@ -9,7 +9,7 @@ return {
       {
         "<leader>fg",
         function()
-          local vault_path = os.getenv("DEFAULT_OBSIDIAN_VAULT")
+          local vault_path = os.getenv("ZETTELKASTEN_PATH")
           builtin.live_grep({
             search_dirs = { vault_path, vim.fn.getcwd() },
             path_display = { "smart" },
