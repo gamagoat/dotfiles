@@ -18,6 +18,18 @@ return {
     notes_subdir = "00-zettelkasten",
     new_notes_location = "notes_subdir",
 
+    templates = {
+      folder = "templates/",
+    },
+
+    daily_notes = {
+      folder = "01-dailies",
+      date_format = "%Y-%m-%d",
+      alias_format = "%B %-d, %Y",
+      default_tags = { "daily-notes" },
+      template = "daily.md",
+    },
+
     ---@param title string|?
     ---@return string
     note_id_func = function(title)
