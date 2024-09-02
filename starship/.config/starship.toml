@@ -11,4 +11,3 @@ disabled = true
 disabled = false
 symbol = "⎈ "
 style = "blue bold"
-detect_files = [".kube/config"]
