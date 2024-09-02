@@ -5,21 +5,21 @@ for file in ~/.{path,exports,aliases,kubectl_aliases,extras}; do
 done;
 unset file;
 
-eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-eval "$(mcfly init zsh)"
-
-eval "$(direnv hook zsh)"
-
 # Load zsh-completions if installed
 if [[ -r "/usr/local/share/zsh-completions" ]]; then
   fpath=(/usr/local/share/zsh-completions $fpath)
 fi
 
+# NOTE: These must be executed before we turn on any autocompletions
 autoload -Uz compinit
 compinit
+
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+eval "$(mcfly init zsh)"
+eval "$(direnv hook zsh)"
+source <(kubectl completion zsh)  # Enable kubectl autocompletion
 
 #compdef kubebuilder
 compdef _kubebuilder kubebuilder
