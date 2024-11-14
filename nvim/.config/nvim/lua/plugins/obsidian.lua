@@ -7,13 +7,26 @@ return {
     "VimEnter " .. vim.fn.expand(vim.fn.getenv("DEFAULT_OBSIDIAN_VAULT")),
     "BufReadPre " .. vim.fn.expand(vim.fn.getenv("DEFAULT_OBSIDIAN_VAULT")) .. "/*.md",
     "BufNewFile " .. vim.fn.expand(vim.fn.getenv("DEFAULT_OBSIDIAN_VAULT")) .. "/*.md",
+
+    "VimEnter " .. vim.fn.expand(vim.fn.getenv("SECONDARY_OBSIDIAN_VAULT")),
+    "BufReadPre " .. vim.fn.expand(vim.fn.getenv("SECONDARY_OBSIDIAN_VAULT")) .. "/*.md",
+    "BufNewFile " .. vim.fn.expand(vim.fn.getenv("SECONDARY_OBSIDIAN_VAULT")) .. "/*.md",
   },
   dependencies = {
     -- Required.
     "nvim-lua/plenary.nvim",
   },
   opts = {
-    dir = vim.fn.expand(vim.fn.getenv("DEFAULT_OBSIDIAN_VAULT")),
+    workspaces = {
+      {
+        name = "default",
+        path = vim.fn.expand(vim.fn.getenv("DEFAULT_OBSIDIAN_VAULT")),
+      },
+      {
+        name = "secondary",
+        path = vim.fn.expand(vim.fn.getenv("SECONDARY_OBSIDIAN_VAULT")),
+      },
+    },
 
     notes_subdir = "00-zettelkasten",
     new_notes_location = "notes_subdir",
