@@ -5,3 +5,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = ".env*",
   command = "set filetype=sh",
 })
+
+-- ObsidianNvim
+vim.api.nvim_create_user_command("ON", "ObsidianNew", {})
+vim.api.nvim_create_user_command("OT", "ObsidianTag", {})
